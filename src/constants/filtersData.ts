@@ -1,0 +1,1 @@
+export const data = ["All", "Combos", "Sliders", "Classic"];
