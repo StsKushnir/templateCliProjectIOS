@@ -8,4 +8,5 @@ export enum SCREEN_NAMES {
   PRODUCT = "Product",
   PAYMENT = "Payment",
   MAIN = "Main",
+  SETTINGS ="Settings",
 };

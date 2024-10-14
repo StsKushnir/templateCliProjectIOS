@@ -9,8 +9,7 @@ type Store = {
   favorites: string[];
   selectedCategory: string;
   searchBurger: string,
-  sortRating: string,
-  sortPrice: string,
+  sortCategory: string,
   setProduct: (burger: Burger | null) => void;
   setCustomBurgerAmount: (item: number) => void;
   setCustomBurgerPrice: (price: number | ((prevPrice: number) => number)) => void;
@@ -18,8 +17,7 @@ type Store = {
   setFavorites: (burgerName: string) => void;
   setSelectedCategory: (category: string) => void;
   setSearchBurger: (value: string) => void;
-  setSortRating: (typeRating: string) => void;
-  setSortPrice: (typePrice: string) => void;
+  setSortCategory: (typeSortCategory: string) => void;
 };
 
 const useStore = create<Store>((set) => ({
@@ -30,8 +28,7 @@ const useStore = create<Store>((set) => ({
   favorites: [],
   selectedCategory: 'All',
   searchBurger: '',
-  sortRating: '',
-  sortPrice: '',
+  sortCategory: '',
   setProduct: (burger) => set(() => ({ product: burger })),
   setCustomBurgerAmount: (item) => set(() => ({ customBurgerAmount: item })),
   setCustomBurgerPrice: (price) => 
@@ -47,10 +44,10 @@ const useStore = create<Store>((set) => ({
         return { favorites: [...state.favorites, burgerName] };
       }
     }),
+  
     setSelectedCategory: (category) => set(() => ({selectedCategory: category})),
     setSearchBurger: (value) => set(() => ({searchBurger: value})),
-    setSortRating: (typeRating) => set(() => ({sortRating: typeRating})),
-    setSortPrice: (typePrice) => set(() => ({sortPrice: typePrice})),
+    setSortCategory: (typeSortCategory) => set(() => ({sortCategory: typeSortCategory})),
     
 }));
 

@@ -1,17 +1,17 @@
 import React from "react";
 import { View, TouchableOpacity } from "react-native";
-import { NavigationProps } from "../../../types/NavigationTypes";
 import { ms } from "react-native-size-matters";
 import GoBackIcon from "../../../assets/icons/additional-Icons/GoBackIcon";
 import { StyleSheet } from "react-native";
 import SettingsIcon from "../../../assets/icons/additional-Icons/SettingsIcon";
+import { DrawerNavigation } from "../../../constants/navigations";
 
-const TopBarButtonsProfile: React.FC<NavigationProps> = ({ navigation, route }) => {
+const TopBarButtonsProfile = () => {
   return (
     <View style={s.topButtons}>
       <TouchableOpacity
         style={s.goBack}
-        onPress={() => navigation.replace("Main")}
+        onPress={() => DrawerNavigation.navigate("Drawer")}
       >
         <GoBackIcon width={ms(28)} height={ms(28)} fill="#ffffff" />
       </TouchableOpacity>

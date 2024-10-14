@@ -15,8 +15,7 @@ const BurgersList: React.FC<NavigationProps> = ({ navigation }) => {
     setFavorites,
     selectedCategory,
     searchBurger,
-    sortRating,
-    sortPrice
+    sortCategory
   } = useStore();
 
   const handleLike = (burgerName: string) => {
@@ -40,17 +39,17 @@ const BurgersList: React.FC<NavigationProps> = ({ navigation }) => {
           burger.type.toLowerCase().includes(searchBurger.toLowerCase())
       )
       .sort((a, b) => {
-        if (sortRating === "higher") {
+        if (sortCategory === "higher") {
           return b.rating - a.rating;
         }
-        if (sortRating === "lower") {
+        if (sortCategory === "lower") {
           return a.rating - b.rating;
         }
   
-        if (sortPrice === "expensive") {
+        if (sortCategory === "expensive") {
           return b.price - a.price;
         }
-        if (sortPrice === "cheaper") {
+        if (sortCategory === "cheaper") {
           return a.price - b.price;
         }
         return 0;

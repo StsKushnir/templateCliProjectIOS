@@ -2,8 +2,10 @@ import React from "react";
 import { View, Text, TouchableOpacity, Modal } from "react-native";
 import { s } from "./PopupMessage.styles";
 import SuccessfulIcon from "../../assets/icons/additional-Icons/SuccessfulIcon";
-import { NavigationProps } from "../../types/NavigationTypes";
+import { DrawerNavProp, NavigationProps } from "../../types/NavigationTypes";
 import useStore from "../../store/useStore";
+import { useNavigation } from "@react-navigation/native";
+
 interface PopupMessageProps {
   modalVisible: boolean;
   navigation: NavigationProps["navigation"];
@@ -13,17 +15,29 @@ interface PopupMessageProps {
 const PopupMessage: React.FC<PopupMessageProps> = ({
   modalVisible,
   setModalVisible,
-  navigation,
 }) => {
-  const { setOrderPrice, setCustomBurgerPrice, setCustomBurgerAmount } = useStore();
+  const navigation = useNavigation<DrawerNavProp>();
+  
+  const {
+    setOrderPrice,
+    setCustomBurgerPrice,
+    setCustomBurgerAmount,
+    setSelectedCategory,
+    setSearchBurger,
+    setSortCategory,
+  } = useStore();
 
   const handleCloseModal = () => {
-    navigation.replace("Main");
+    navigation.navigate("Drawer");
     setModalVisible(false);
     setOrderPrice(0);
     setCustomBurgerPrice(3);
     setCustomBurgerAmount(1);
-  }
+    useStore.setState({ favorites: [] }); 
+    setSelectedCategory("All"); 
+    setSearchBurger(""); 
+    setSortCategory(""); 
+  };
   return (
     <Modal
       animationType="fade"
@@ -42,10 +56,7 @@ const PopupMessage: React.FC<PopupMessageProps> = ({
             sent to your email.
           </Text>
 
-          <TouchableOpacity
-            style={s.closeButton}
-            onPress={handleCloseModal}
-          >
+          <TouchableOpacity style={s.closeButton} onPress={handleCloseModal}>
             <Text style={s.closeButtonText}>Go Back</Text>
           </TouchableOpacity>
         </View>

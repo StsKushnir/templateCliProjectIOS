@@ -77,7 +77,7 @@ export const s = StyleSheet.create({
   },
   portionWrap:{
     width: 121,
-
+    marginTop: 54,
   },
   portionTitle:{
     marginBottom: 5,
@@ -110,6 +110,33 @@ export const s = StyleSheet.create({
   countImg: {
     width: '100%',
     height: '100%',
+  },
+  trackStyle: {
+    height: 7,
+    borderRadius: 5,
+    backgroundColor: '#ddd',
+    width: 30,
+    shadowColor: 'rgba(255, 153, 0, 0.50)',
+    shadowOffset: { width: 0, height: 1 },
+    shadowRadius: 13,
+    shadowOpacity: 1,
+  },
+  selectedStyle: {
+    backgroundColor: '#EF2A39',
+    width: 30,
+  },
+  markerStyle: {
+    height: 18,
+    width: 14,
+    backgroundColor: '#EF2A39',
+    borderColor: '#fff',
+    borderWidth: 2,
+    marginTop: 4,
+    borderRadius: 10,
+  },
+  unselectedStyle: {
+    width: 30,
+    backgroundColor: '#ccc',
   },
 
 });

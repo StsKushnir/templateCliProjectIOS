@@ -6,6 +6,7 @@ import Slider from "@react-native-community/slider";
 import { NavigationProps } from "../../../types/NavigationTypes";
 import useStore from "../../../store/useStore";
 import { handleOrderPrice } from "../../../utils/handleOrderPrice";
+import SpicySlider from "../../CustomScreen/SpicySlider/SpicySlider";
 
 type Props = {
   product: Burger;
@@ -30,22 +31,7 @@ const ProductOrderInfo: FC<Props> = ({ navigation, product }) => {
   return (
     <View style={s.orderWrap}>
       <View style={s.orderSettings}>
-        <View style={s.spicy}>
-          <Text style={s.spicyTitle}>Spicy</Text>
-          <Slider
-            style={s.slider}
-            minimumValue={0}
-            maximumValue={1}
-            minimumTrackTintColor="#EF2A39"
-            maximumTrackTintColor="#F3F4F6"
-            thumbTintColor="transparent"
-            thumbImage={require("../../../assets/icons/additional-Icons/thumbSliderIcon.png")}
-          />
-          <View style={s.typesSpicy}>
-            <Text style={s.mild}>Mild</Text>
-            <Text style={s.hot}>Hot</Text>
-          </View>
-        </View>
+      <SpicySlider />
         <View style={s.portionWrap}>
           <Text style={s.portionTitle}>Portion</Text>
           <View style={s.portionCounter}>

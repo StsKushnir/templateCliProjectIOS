@@ -1,15 +1,15 @@
 import React from "react";
 import { View, TouchableOpacity } from "react-native";
-import { NavigationProps } from "../../../types/NavigationTypes";
 import { ms } from "react-native-size-matters";
 import GoBackIcon from "../../../assets/icons/additional-Icons/GoBackIcon";
 import { StyleSheet } from "react-native";
 import SupportMenuIcon from "../../../assets/icons/additional-Icons/SupportMenuIcon";
+import { DrawerNavigation } from "../../../constants/navigations";
 
-const TopButtonsBarSupport: React.FC<NavigationProps> = ({ navigation, route }) => {
+const TopButtonsBarSupport = () => {
   return (
     <View style={s.topBtnsWrap}>
-      <TouchableOpacity onPress={() => navigation.replace("Main")}>
+      <TouchableOpacity onPress={() => DrawerNavigation.navigate("Drawer")}>
         <GoBackIcon width={ms(28)} height={ms(28)} />
       </TouchableOpacity>
       <TouchableOpacity>

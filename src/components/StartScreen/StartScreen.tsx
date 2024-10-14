@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from "react";
 import { View, Animated } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { s } from "./StartScreen.styles";
-import { NavigationProps } from "../../types/NavigationTypes";
 import StartLogoIcon from "../../assets/icons/startScreen-icons/StartLogoIcon";
 import { StartBigBurg } from "../../assets/icons/startScreen-icons/StartBigBurg";
 import { StartSmallBurg } from "../../assets/icons/startScreen-icons/StartSmallBurg";
 import { ms } from "react-native-size-matters";
+import { DrawerNavigation } from "../../constants/navigations";
 
-const StartScreen: React.FC<NavigationProps> = ({ navigation }) => {
+const StartScreen = () => {
+
   const logoOpacity = useRef(new Animated.Value(0)).current;
   const bigBurgOpacity = useRef(new Animated.Value(0)).current;
   const smallBurgOpacity = useRef(new Animated.Value(0)).current;
@@ -33,11 +34,11 @@ const StartScreen: React.FC<NavigationProps> = ({ navigation }) => {
     });
 
     const timer = setTimeout(() => {
-      navigation.replace("Main");
+      DrawerNavigation.navigate('Drawer'); 
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, [navigation, logoOpacity, bigBurgOpacity, smallBurgOpacity]);
+  }, [DrawerNavigation, logoOpacity, bigBurgOpacity, smallBurgOpacity]);
 
   return (
     <LinearGradient

@@ -2,6 +2,7 @@ import { ScaledSheet } from "react-native-size-matters";
 
 export const s = ScaledSheet.create({
   container: {
+    
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -9,17 +10,24 @@ export const s = ScaledSheet.create({
     marginTop: 15,
   },
   inputContainer: {
+    width: '100%',
     flexDirection: "row",
     alignItems: "center",
+  },
+  inputWrap: {
+    flexDirection: 'row',
+    alignItems: "center",
+    width: '75%',
     borderColor: "#3C2F2F",
     borderRadius: 20,
     backgroundColor: "#ffffff",
-    height: 50,
+    height: 55,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 4,
     },
+    inputWrapper: {},
     shadowOpacity: 0.15,
     shadowRadius: 19,
     elevation: 5,
@@ -31,7 +39,7 @@ export const s = ScaledSheet.create({
     fontStyle: "normal",
     fontWeight: "500",
     fontSize: 15,
-    lineHeight: 15,
+    lineHeight: 17,
     color: "#3C2F2F",
     flex: 1,
     marginLeft: 10,
@@ -45,68 +53,5 @@ export const s = ScaledSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-  },
-  dropMenu: {
-    width: 300,
-    height: 100,
-    right: 85,
-    borderRadius: 20,
-    backgroundColor: '#FFFFFF',
-    position: 'absolute',
-    bottom: -2,
-    zIndex: 50,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 19,
-    elevation: 5,
-    flex: 1,
-  },
-  dropMenuTitle: {
-    fontFamily: 'Roboto',
-    fontWeight: '600',
-    fontSize: 14,
-    lineHeight: 18,
-    color: '#3C2F2F',
-    textAlign: 'center',
-    marginBottom: 3,
-  },
-  menuWrap: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  typeRating: {
-    alignItems: 'flex-start',
-  },
-  sortRatingWrap: {
-    flexDirection: 'column',
-    gap: 6,
-  },
-  sortPriceWrap: {
-    flexDirection: 'column',
-    gap: 10,
-  },
-  sortingWrap: {
-    flexDirection: 'row',
-    gap: 5,
-  },
-  sortingCheckBox: {
-    width: 20,
-    height: 20,
-    borderWidth: 2,
-    borderRadius: 100,
-    borderColor: '#EF2A39',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  sortingCheckBoxPoint: {
-    width: 10,
-    height: 10,
-    borderRadius: 100,
   },
 });

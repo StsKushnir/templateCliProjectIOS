@@ -5,13 +5,16 @@ import { ms } from "react-native-size-matters";
 import GoBackIcon from "../../assets/icons/additional-Icons/GoBackIcon";
 import { StyleSheet } from "react-native";
 import SearchIcon from "../../assets/icons/additional-Icons/SearchIcon";
+import { DrawerNavigation } from "../../constants/navigations";
 
-const TopButtonsBar: React.FC<NavigationProps> = ({ navigation, route }) => {
-  const previousScreen = route.params?.previousScreen || 'Main'; 
+
+const TopButtonsBar: React.FC<NavigationProps> = ({route}) => {
+
+  const previousScreen = route.params?.previousScreen || 'Drawer'; 
 
   return (
     <View style={s.topBtnsWrap}>
-      <TouchableOpacity onPress={() => navigation.replace(previousScreen)}>
+      <TouchableOpacity onPress={() => DrawerNavigation.navigate( previousScreen )}>
         <GoBackIcon width={ms(28)} height={ms(28)} />
       </TouchableOpacity>
       <TouchableOpacity>

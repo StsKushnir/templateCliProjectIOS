@@ -46,6 +46,7 @@ const MainTabNavigator: React.FC<NavigationProps> = ({ navigation }) => {
               backgroundColor: "transparent",
               height: 70,
               bottom: 0,
+              
             },
           }}
         >
